@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "e424b474-07b4-47f1-8f85-a78700369d54",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Book Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Book B\",\r\n  \"writer\": \"Sezgi1\",\r\n  \"price\": 50,\r\n  \"stock\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Customer",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test6\",\r\n    \"password\": \"test\",\r\n    \"firstName\": null,\r\n    \"lastName\": \"test\",\r\n    \"phone\": \"test\",\r\n    \"address\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE BOOK STOCK",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"637a6f83a4cce262348fc0be\",\r\n  \"stock\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/books/updateStock",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"updateStock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ORDER CREATE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerId\": \"637a75819c6d9221762accb8\",\r\n  \"bookList\": [\r\n      {\r\n        \"id\": \"637a6de1e36cef17c23a6c26\"\r\n        \r\n      },\r\n      {\r\n          \"id\": \"637a79e42bc34c457061c781\"\r\n      }\r\n     ],\r\n   \"status\":\"active\"\r\n}\r\n\r\n  \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/order/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ORDER BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/order/637a79fe2bc34c457061c782",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order",
+						"637a79fe2bc34c457061c782"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ORDERS INTERVAL DATE TIMES",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/order?startDate=2022-10-20&endDate=2022-10-21",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2022-10-20"
+						},
+						{
+							"key": "endDate",
+							"value": "2022-10-21"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "STATISTIC",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/statistic/monthly?customerId=637a75819c6d9221762accb8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"statistic",
+						"monthly"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "637a75819c6d9221762accb8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ORDER BY CUSTOMER ID ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/customer/customerOrders?customerId=637a75819c6d9221762accb8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"customerOrders"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "637a75819c6d9221762accb8"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
